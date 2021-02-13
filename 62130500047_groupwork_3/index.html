@@ -27,19 +27,21 @@
 
 <body>
   <div id="app" class="text-center">
-    <h1 class="text-4x">Gallery ( {{countImages}} )</h1>
-    <div>
-      <ul class="space-y-4">
-        <li v-for="(task,index) in tasks">{{task}}</li>
-          <li>
-            <img v-for="image in images" :src="image.url" :alt="image.alt" class="w-72">
-          </li>       
-        <!-- <button class="bg-red-300 py-1 px-2 rounded">LIKE</button> -->       
-      </ul>
+    <h1 class="text-4x">Photo Gallery ({{countImages}})</h1>
+    <h3 class="text-lg">Total Like ({{countLike}})</h3>
+    <div v-for="(image,index) in images">
+      <div class="flex justify-center">
+        <img :src="image.url" class="w-72 cursor-pointer shadow-lg rounded-md" v-on:click="toggleLike(index)">
+      </div>
+      <div class="p-3 flex flex-wrap content-center">
+        <i v-show="!image.like" class="material-icons stroke-current text-red-500">favorite_border</i>
+        <i v-show="image.like" class="material-icons fill-current text-red-500">favorite</i>
+        {{ image.alt }}
+      </div>
     </div>
-
-    <!-- my main.js -->
-    <script src="./main.js"></script>
+  </div>
+  <!-- my main.js -->
+  <script src="./main.js"></script>
 </body>
 
 </html>

@@ -1,15 +1,13 @@
 const app = {
     data() {
         return {      
-            images: [{url: './images/iris.jpg', alt: 'iris',like:false},
-                    {url: './images/hydrangea.jpg', alt: 'hydrangea',like:false},
-                    {url: './images/daisy.jpg', alt: 'daisy',like:false},
-                    {url: './images/sunflower.jpg', alt: 'sunflower',like:false},
-                    {url: './images/lily.jpg', alt: 'lily',like:false},
-                    {url: './images/rose.jpg', alt: 'rose',like:false}
-                    ],
-            tasks: ['Iris','Hydrangea','Daisy','Sun Flower','Lily','Rose']
-
+            images: [{url: './images/iris.jpg', alt: 'Iris',like:false},
+                    {url: './images/hydrangea.jpg', alt: 'Hydrangea',like:false},
+                    {url: './images/daisy.jpg', alt: 'Daisy',like:false},
+                    {url: './images/sunflower.jpg', alt: 'Sunflower',like:false},
+                    {url: './images/lily.jpg', alt: 'Lily',like:false},
+                    {url: './images/rose.jpg', alt: 'Rose',like:false}
+                    ]
         }
     },
     methods: {
@@ -19,7 +17,10 @@ const app = {
     },
     computed: {
         countImages() {
-            return this.images.filter(t => !t.done).length
+            return this.images.length
+        },
+        countLike() {
+            return this.images.filter(l => l.like).length
         }
     }
 }
