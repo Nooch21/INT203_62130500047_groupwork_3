@@ -21,21 +21,29 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
 
 </head>
 
-<body>
+<body class="bg-gradient-to-b from-purple-200 via-pink-200 to-red-200">
   <div id="app" class="text-center">
-    <h1 class="text-4x">Photo Gallery ({{countImages}})</h1>
-    <h3 class="text-lg">Total Like ({{countLike}})</h3>
+    <div class="flex flex-wrap item-center justify-center pt-4">
+      <h1 class="text-4x">
+        <i class="material-icons fill-current text-purple-400">local_florist</i>
+        Photo Gallery ({{countImages}})
+        <i class="material-icons fill-current text-pink-400">local_florist</i>
+      </h1>
+    </div>
+    <div>
+      <h3 class="text-2xl">Total Like ({{countLike}})</h3>  
+    </div>
     <div v-for="(image,index) in images">
       <div class="flex justify-center">
         <img :src="image.url" class="w-72 cursor-pointer shadow-lg rounded-md" v-on:click="toggleLike(index)">
       </div>
-      <div class="p-3 flex flex-wrap content-center">
-        <i v-show="!image.like" class="material-icons stroke-current text-red-500">favorite_border</i>
-        <i v-show="image.like" class="material-icons fill-current text-red-500">favorite</i>
+      <div class="text-lg p-3 flex flex-wrap content-center justify-center">
+        <i v-show="!image.like" class="material-icons stroke-current text-red-500 px-2">favorite_border</i>
+        <i v-show="image.like" class="material-icons fill-current text-red-500 px-2">favorite</i>
         {{ image.alt }}
       </div>
     </div>

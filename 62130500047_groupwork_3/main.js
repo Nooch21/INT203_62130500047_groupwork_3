@@ -4,7 +4,7 @@ const app = {
             images: [{url: './images/iris.jpg', alt: 'Iris',like:false},
                     {url: './images/hydrangea.jpg', alt: 'Hydrangea',like:false},
                     {url: './images/daisy.jpg', alt: 'Daisy',like:false},
-                    {url: './images/sunflower.jpg', alt: 'Sunflower',like:false},
+                    {url: './images/sunflower.jpg', alt: 'Sun Flower',like:false},
                     {url: './images/lily.jpg', alt: 'Lily',like:false},
                     {url: './images/rose.jpg', alt: 'Rose',like:false}
                     ]
